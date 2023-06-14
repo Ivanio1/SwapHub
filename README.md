@@ -16,7 +16,7 @@ This website is a one-stop-shop for buying and selling items between users. With
 
 ## Developers
 
-- [ivanio1]([https://github.com/n-fridman](https://github.com/Ivanio1))
+- [ivanio1](https://github.com/Ivanio1)
 
 ## License
 
