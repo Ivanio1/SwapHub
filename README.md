@@ -20,4 +20,4 @@ This website is a one-stop-shop for buying and selling items between users. With
 
 ## License
 
-Project Burning-Lab.SwipeDetector is distributed under the MIT license.
+Project is distributed under the MIT license.
