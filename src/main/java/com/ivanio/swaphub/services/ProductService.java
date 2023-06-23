@@ -2,7 +2,9 @@ package com.ivanio.swaphub.services;
 
 import com.ivanio.swaphub.models.Image;
 import com.ivanio.swaphub.models.Product;
+import com.ivanio.swaphub.models.User;
 import com.ivanio.swaphub.repositories.ProductRepository;
+import com.ivanio.swaphub.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -19,14 +22,15 @@ import java.util.Objects;
 @Slf4j
 public class ProductService {
     private final ProductRepository productRepository;
-
+    private final UserRepository userRepository;
 
     public List<Product> getProducts(String title) {
-        if (title != null) return productRepository.findByTitle(title);
+        if (title != null && !title.equals("")) return productRepository.findByTitle(title);
         return productRepository.findAll();
     }
 
-    public void saveProduct(Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+    public void saveProduct(Principal principal, Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+        product.setUser(getUserByPrincipal(principal));
         Image image1;
         Image image2;
         Image image3;
@@ -49,6 +53,11 @@ public class ProductService {
         Product productFromDb = productRepository.save(product);
         productFromDb.setPreviewImageId(productFromDb.getImages().get(0).getId());
         productRepository.save(product);
+    }
+
+    public User getUserByPrincipal(Principal principal) {
+        if(principal==null) return new User();
+        return userRepository.findByEmail(principal.getName());
     }
 
     private Image toImageEntity(MultipartFile file) throws IOException {
