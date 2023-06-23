@@ -13,5 +13,8 @@
     <input type="submit" value="Вход"/>
 </form>
 <a href="/registration">Зарегистрироваться</a>
+<#if errorMessage??>
+    <h2 style="color: red">${errorMessage}</h2>
+</#if>
 </body>
 </html>
