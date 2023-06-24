@@ -1,5 +1,6 @@
 package com.ivanio.swaphub.controllers;
 
+
 import com.ivanio.swaphub.models.Image;
 import com.ivanio.swaphub.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +19,12 @@ public class ImageController {
     private final ImageRepository imageRepository;
 
     @GetMapping("/images/{id}")
-private ResponseEntity<?> getImageById(@PathVariable Long id){
-    Image image = imageRepository.findById(id).orElse(null);
-    return ResponseEntity.ok().header("fileName", image.getOriginalFileName())
-            .contentType(MediaType.valueOf(image.getContentType()))
-            .contentLength(image.getSize())
-            .body(new InputStreamResource(new ByteArrayInputStream(image.getBytes())));
-}
-
-
-
+    private ResponseEntity<?> getImageById(@PathVariable Long id) {
+        Image image = imageRepository.findById(id).orElse(null);
+        return ResponseEntity.ok()
+                .header("fileName", image.getOriginalFileName())
+                .contentType(MediaType.valueOf(image.getContentType()))
+                .contentLength(image.getSize())
+                .body(new InputStreamResource(new ByteArrayInputStream(image.getBytes())));
+    }
 }

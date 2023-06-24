@@ -1,5 +1,6 @@
 package com.ivanio.swaphub.services;
 
+
 import com.ivanio.swaphub.models.Image;
 import com.ivanio.swaphub.models.Product;
 import com.ivanio.swaphub.models.User;
@@ -10,21 +11,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
 
-    public List<Product> getProducts(String title) {
+    public List<Product> listProducts(String title) {
         if (title != null && !title.equals("")) return productRepository.findByTitle(title);
         return productRepository.findAll();
     }
@@ -41,22 +39,20 @@ public class ProductService {
         }
         if (file2.getSize() != 0) {
             image2 = toImageEntity(file2);
-            image2.setPreviewImage(false);
             product.addImageToProduct(image2);
         }
         if (file3.getSize() != 0) {
             image3 = toImageEntity(file3);
-            image3.setPreviewImage(false);
             product.addImageToProduct(image3);
         }
-        log.info("Saving new Product. Title: {};", product.getTitle());
+        log.info("Saving new Product. Title: {}; Author email: {}", product.getTitle(), product.getUser().getEmail());
         Product productFromDb = productRepository.save(product);
         productFromDb.setPreviewImageId(productFromDb.getImages().get(0).getId());
         productRepository.save(product);
     }
 
     public User getUserByPrincipal(Principal principal) {
-        if(principal==null) return new User();
+        if (principal == null) return new User();
         return userRepository.findByEmail(principal.getName());
     }
 
@@ -70,8 +66,19 @@ public class ProductService {
         return image;
     }
 
-    public void deleteProduct(Long id) {
-        productRepository.deleteById(id);
+    public void deleteProduct(User user, Long id) {
+        Product product = productRepository.findById(id)
+                .orElse(null);
+        if (product != null) {
+            if (product.getUser().getId().equals(user.getId())) {
+                productRepository.delete(product);
+                log.info("Product with id = {} was deleted", id);
+            } else {
+                log.error("User: {} haven't this product with id = {}", user.getEmail(), id);
+            }
+        } else {
+            log.error("Product with id = {} is not found", id);
+        }
     }
 
     public Product getProductById(Long id) {
