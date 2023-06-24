@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SwapHub</title>
-</head>
-<body>
-<h1>SwapHub</h1> <hr>
-<h4>Подробная информация о товаре</h4>
-<#list images as img>
-    <img src="/images/${img.id}" height="60px"/><br><br>
-</#list>
-<b>Название товара: </b> ${product.title}<br>
-<b>Описание объявления: </b> ${product.description}<br>
-<b>Цена </b> ${product.price}<br>
-<b>Город: </b> ${product.city}<br>
-<b>Имя автора: </b> ${product.user.name}<br>
-<b>Номер телефона: </b>${product.user.phoneNumber}<br>
-<hr>
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
 
-</body>
-</html>
+
+    <div class="card-columns">
+        <#list images as img>
+            <a href="/images/${img.id}" class="product-link">
+                <div class="card text-white bg-dark my-3 product">
+                    <img src="/images/${img.id}"
+                         class="card-img-top">
+                </div>
+            </a>
+        <#else>
+            <h1 style="text-align: center">Не найдено</h1>
+        </#list>
+    </div>
+    <hr>
+    <p><h1 style="text-align: center">${product.title} | ${product.price} ₽</h1></p>
+    <p style="text-align: center">${product.description}</p>
+    <p style="text-align: center">Номер телефона продавца: <b>${authorProduct.phoneNumber}</b></p>
+
+    <hr>
+    <p style="text-align: center">
+        <a href="/user/${authorProduct.id}">
+            <img src="/static/images/avatar.png" alt="mdo" width="32" height="32"
+                 class="rounded-circle"> ${authorProduct.name}
+        </a>
+    </p>
+
+</@t.template>
