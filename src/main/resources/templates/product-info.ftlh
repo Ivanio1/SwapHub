@@ -13,8 +13,8 @@
 <b>Описание объявления: </b> ${product.description}<br>
 <b>Цена </b> ${product.price}<br>
 <b>Город: </b> ${product.city}<br>
-<b>Имя автора: </b> ${product.user.name}<br>
-<b>Номер телефона: </b>${product.user.phoneNumber}<br>
+<b>Имя автора: </b> <a href="/user/${product.user.id}" >${product.user.name}</a><br>
+
 <hr>
 
 </body>
