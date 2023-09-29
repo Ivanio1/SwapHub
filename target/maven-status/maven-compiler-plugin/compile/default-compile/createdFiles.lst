@@ -1,0 +1,17 @@
+com\ivanio\swaphub\controllers\AdminController.class
+com\ivanio\swaphub\repositories\ImageRepository.class
+com\ivanio\swaphub\services\ProductService.class
+com\ivanio\swaphub\models\Product.class
+com\ivanio\swaphub\controllers\ImageController.class
+com\ivanio\swaphub\services\CustomUserDetailsService.class
+com\ivanio\swaphub\models\User.class
+com\ivanio\swaphub\configs\SecurityConfig.class
+com\ivanio\swaphub\controllers\UserController.class
+com\ivanio\swaphub\models\Image.class
+com\ivanio\swaphub\services\UserService.class
+com\ivanio\swaphub\repositories\UserRepository.class
+com\ivanio\swaphub\SwapHubApplication.class
+com\ivanio\swaphub\models\enums\Role.class
+com\ivanio\swaphub\repositories\ProductRepository.class
+com\ivanio\swaphub\configs\MvcConfig.class
+com\ivanio\swaphub\controllers\ProductController.class
