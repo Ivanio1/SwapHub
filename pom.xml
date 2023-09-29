@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ivanio</groupId>
     <artifactId>SwapHub</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>SwapHub</name>
     <description>SwapHub</description>
     <properties>
