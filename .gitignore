@@ -1,7 +1,5 @@
 HELP.md
 
-
-
 ### STS ###
 .apt_generated
 .classpath
@@ -17,15 +15,4 @@ HELP.md
 *.iml
 *.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/

@@ -1,0 +1,17 @@
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\SwapHubApplication.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\controllers\ImageController.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\services\CustomUserDetailsService.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\repositories\ImageRepository.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\models\User.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\configs\MvcConfig.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\controllers\UserController.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\models\Image.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\controllers\ProductController.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\configs\SecurityConfig.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\services\ProductService.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\repositories\ProductRepository.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\repositories\UserRepository.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\controllers\AdminController.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\services\UserService.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\models\Product.java
+C:\Users\Asus\IdeaProjects\SwapHub\src\main\java\com\ivanio\swaphub\models\enums\Role.java
