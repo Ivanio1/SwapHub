@@ -1,4 +1,3 @@
-Проект для изучения Spring Boot и других технологий
 <p align="center">
       <img src="https://i.ibb.co/LzysPwm/logoza-ru.png" alt="logo" border="0"></a>
 </p>
