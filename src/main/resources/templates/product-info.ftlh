@@ -1,7 +1,5 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-
-
     <div class="card-columns">
         <#list images as img>
             <a href="/images/${img.id}" class="product-link">
@@ -11,13 +9,13 @@
                 </div>
             </a>
         <#else>
-            <h1 style="text-align: center">Не найдено</h1>
+            <h1 style="text-align: center">Not found</h1>
         </#list>
     </div>
     <hr>
-    <p><h1 style="text-align: center">${product.title} | ${product.price} ₽</h1></p>
+    <p><h1 style="text-align: center">${product.title} | ${product.price} €</h1></p>
     <p style="text-align: center">${product.description}</p>
-    <p style="text-align: center">Номер телефона продавца: <b>${authorProduct.phoneNumber}</b></p>
+    <p style="text-align: center">Seller's phone number: <b>${authorProduct.phoneNumber}</b></p>
 
     <hr>
     <p style="text-align: center">
