@@ -1,6 +1,6 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <h1 style="text-align: center">Personal account</h1>
+    <h1 style="text-align: center;color: #293f88">Personal account</h1>
     <hr>
     <br>
     <div style="text-align: center">
@@ -16,12 +16,12 @@
         <br>
         <br>
         <#if user.isAdmin()>
-            <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
+            <a class="btn btn-custom mb-3" style="text-align: center; width: 100%"
                href="/admin">
                 Admin panel
             </a><br>
         </#if>
-        <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
+        <a class="btn btn-custom mb-3" style="text-align: center; width: 100%"
            href="/my/products">
             My items
         </a>

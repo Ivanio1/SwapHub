@@ -7,3 +7,26 @@
     color: #000 !important;
     text-decoration: none
 }
+
+.navbar-custom {
+    background-color: pink !important;
+}
+
+.btn-custom{
+    background-color: pink !important;
+}
+
+.bg-pink{
+    background-color: pink !important;
+}
+.bg-maroon{
+    color: maroon;
+}
+
+.bg-blue{
+    color: royalblue ;
+}
+
+.navbar-brand {
+    color: maroon;
+}

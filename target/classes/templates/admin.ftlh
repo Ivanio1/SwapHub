@@ -1,6 +1,6 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    `<h1 style="text-align: center">Admin Panel</h1><hr>
+    <h1 style="text-align: center;color: #293f88">Admin Panel</h1><hr>
     <table class="table table-hover table-dark">
         <tr>
             <th scope="col">Email</th>

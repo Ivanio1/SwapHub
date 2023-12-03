@@ -3,7 +3,7 @@
     <div class="card-columns">
         <#list images as img>
             <a href="/images/${img.id}" class="product-link">
-                <div class="card text-white bg-dark my-3 product">
+                <div class="card text-white bg-pink my-3 product">
                     <img src="/images/${img.id}"
                          class="card-img-top">
                 </div>

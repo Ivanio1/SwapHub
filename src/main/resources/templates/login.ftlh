@@ -1,6 +1,6 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <h1 style="text-align: center">Authorization</h1>
+    <h1 style="text-align: center; color: #293f88">Authorization</h1>
     <hr>
     <form action="/login " method="post">
         <div class="form-group">
@@ -18,8 +18,8 @@
             </div>
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" style="width: 100%" class="btn btn-dark">Log in</button>
+        <button type="submit" style="width: 100%" class="btn btn-custom">Log in</button>
     </form>
     <hr>
-    <h2>No SwapHub account? <a href="/registration">Register now!</a></h2>
+    <h2>No SwapHub account? <a href="/registration" class="bg-maroon">Register now!</a></h2>
 </@t.template>

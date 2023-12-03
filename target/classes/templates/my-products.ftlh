@@ -1,8 +1,8 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <h1 style="text-align: center">My Items</h1>
+    <h1 style="text-align: center;color: #293f88">My Items</h1>
     <hr>
-    <a class="btn btn-dark mt-3 mb-3" style="text-align: center; width: 100%"
+    <a class="btn btn-custom mt-3 mb-3" style="text-align: center; width: 100%"
        data-toggle="collapse" href="#collapseExample" role="button"
        aria-expanded="true" aria-controls="collapseExample">
         Add new item
@@ -19,14 +19,14 @@
                 <div class="input-group mb-3">
                     <input type="number" required class="form-control" id="price" name="price">
                     <div class="input-group-append">
-                        <span class="input-group-text">₽</span>
+                        <span class="input-group-text">€</span>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="searchCity">City</label>
                 <select id="searchCity" required name="city" class="form-control">
-                    <option value="">Город не выбран</option>
+                    <option value="">City is not selected</option>
                     <option value="Brussels">Brussels</option>
                     <option value="Antwerp">Antwerp</option>
                     <option value="Ghent">Ghent</option>
@@ -57,7 +57,7 @@
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
-            <button type="submit" style="width: 100%" class="btn btn-dark">Add</button>
+            <button type="submit" style="width: 100%" class="btn btn-custom">Add</button>
         </form>
     </div>
     <div class="card-columns">
